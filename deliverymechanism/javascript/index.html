@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Use Case Driven Approach with JavaScript</title>
+	<style>
+		body {
+			font-size: 1.3125em;
+			font-family: sans-serif;
+		}
+		label {
+			display: block;
+			margin-bottom: .3125em;
+		}
+		input {
+			display: block;
+			font-size: 1em;
+			margin-bottom: 1em;
+		}
+		input[type="submit"] {
+			border: 0;
+			width: 220px;
+			border-radius: 4px;
+			padding: 10px;
+		}
+	</style>
+</head>
+<body>
+
+	<form action="/order" method="post">
+		<label for="customerId">Customer ID</label>
+		<input id="customerId" type="text" name="customerId" value="1">
+		<label for="shipmentDestination">Shipment Destination</label>
+		<input id="shipmentDestination" type="text" name="shipmentDestination" value="Stuttgart">
+		<label for="paymentInformation">Payment Information</label>
+		<input id="paymentInformation" type="text" name="paymentInformation" value="PayPal">
+		<label for="customerContactInfo">Customer Contact Info</label>
+		<input id="customerContactInfo" type="text" name="customerContactInfo" value="Maximilian Hoffmann">
+		<label for="shipmentMechanism">Shipment Mechanism</label>
+		<input id="shipmentMechanism" type="text" name="shipmentMechanism" value="DHL">
+		<input type="submit" value="create order">
+	</form>
+
+	<div id="result"></div>
+
+	<!-- Storage (included all, try swapping in EntityGateway) -->
+	<script src="/storage/api/order.js"></script>
+	<script src="/storage/indexeddb/order.js"></script>
+	<script src="/storage/localstorage/order.js"></script>
+
+	<!-- Business Logic, independent of frameworks -->
+	<script src="/app/namespace.js"></script>
+	<script src="/app/entitygateway/storage.js"></script>
+	<script src="/app/usecase/createorder.js"></script>
+	<script src="/app/entity/order.js"></script>
+
+	<!-- Delivery Mechanism -->
+	<script src="/deliverymechanism/javascript/namespace.js"></script>
+	<script src="/deliverymechanism/javascript/controller/createorder.js"></script>
+	<script src="/deliverymechanism/javascript/presenter/order.js"></script>
+	<script src="/deliverymechanism/javascript/viewmodel/order.js"></script>
+	<script src="/deliverymechanism/javascript/view/order.js"></script>
+</body>
+</html>
