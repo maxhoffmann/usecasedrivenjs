@@ -4,14 +4,14 @@ App.Entity.Order = (function() {
 
 	var orderId = 1;
 
-	function Order( data ) {
+	function Order( order ) {
 		this.orderId = orderId++;
 
-		this.customerId = data.customerId;
-		this.shipmentDestination = data.shipmentDestination;
-		this.paymentInformation = data.paymentInformation;
-		this.customerContactInfo = data.customerContactInfo;
-		this.shipmentMechanism = data.shipmentMechanism;
+		this.customerId = order.customerId;
+		this.shipmentDestination = order.shipmentDestination;
+		this.paymentInformation = order.paymentInformation;
+		this.customerContactInfo = order.customerContactInfo;
+		this.shipmentMechanism = order.shipmentMechanism;
 	}
 
 	Order.validate = function( order ) {
