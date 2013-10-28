@@ -15,6 +15,10 @@ App.Entity.Order = (function() {
 	}
 
 	Order.validate = function( order ) {
+		if (order === undefined) {
+			throw new Error('no order passed');
+		}
+
 		// some existence checking here
 		// you should do real validation!
 		return order.customerId
