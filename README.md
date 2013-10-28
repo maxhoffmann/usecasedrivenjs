@@ -7,10 +7,9 @@ This is an example implementation using the use case driven approach as describe
 Future plans
 ------------
 
-1. add tests
-2. implement the LocalStorage Entity Gateway
-3. add second delivery mechanism using require.js
-4. add third delivery mechanism using Angular.js
+1. implement the LocalStorage Entity Gateway
+2. add second delivery mechanism using require.js
+3. add third delivery mechanism using Angular.js
 
 
 LICENSE
