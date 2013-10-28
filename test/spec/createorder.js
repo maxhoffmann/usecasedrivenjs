@@ -33,7 +33,7 @@ test("return the new order", function() {
 
 	var newOrder = App.UseCase.createOrder( newOrderRequest );
 
-	equal(1, newOrder.orderId, 'with a new orderId');
+	equal(typeof newOrder.orderId, "number", 'with a new orderId');
 	equal(newOrderRequest.customerId, newOrder.customerId, 'with the same customerId');
 	equal(newOrderRequest.shipmentDestination, newOrder.shipmentDestination, 'with the same shipmentDestination');
 	equal(newOrderRequest.paymentInformation, newOrder.paymentInformation, 'with the same paymentInformation');
