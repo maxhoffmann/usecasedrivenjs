@@ -1,0 +1,36 @@
+{
+  "name": "usecasedrivenjs",
+  "version": "1.0.0",
+  "description": "example implementation using the use case driven approach",
+  "main": "deliverymechanism/javascript/index.html",
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {
+    "mocha": "~1.13.0",
+    "chai": "~1.8.1",
+    "karma-script-launcher": "~0.1.0",
+    "karma-chrome-launcher": "~0.1.0",
+    "karma-firefox-launcher": "~0.1.0",
+    "karma-html2js-preprocessor": "~0.1.0",
+    "karma-jasmine": "~0.1.3",
+    "karma-requirejs": "~0.1.0",
+    "karma-coffee-preprocessor": "~0.1.0",
+    "karma-phantomjs-launcher": "~0.1.0",
+    "karma": "~0.10.4",
+    "karma-mocha": "~0.1.0",
+    "karma-chai": "0.0.2"
+  },
+  "scripts": {
+    "test": "karma start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://maxhoffmann@github.com/maxhoffmann/usecasedrivenjs.git"
+  },
+  "author": "Maximilian Hoffmann",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/maxhoffmann/usecasedrivenjs/issues"
+  }
+}

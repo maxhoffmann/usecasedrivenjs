@@ -1,24 +1,31 @@
 <!DOCTYPE html>
 <html>
-<head>
+	<head>
+	<title>User Case Driven JavaScript Mocha Test</title>
 	<meta charset="utf-8">
-	<title>Tests: Use Case Driven JavaScript</title>
+	<link rel="stylesheet" href="/node_modules/mocha/mocha.css">
+	</head>
+	<body>
+		<script src="/app/namespace.js"></script>
+		<script src="/app/usecase/createorder.js"></script>
+		<script src="/app/entity/order.js"></script>
 
-	<!-- testing frameworks -->
-	<link href="/test/lib/qunit-1.12.0.css" rel="stylesheet">
-	<script src="/test/lib/qunit-1.12.0.js"></script>
-	<script src="/test/lib/sinon-1.7.3.js"></script>
-	<script src="/test/lib/sinon-qunit-1.0.0.js"></script>
-
-	<!-- application logic -->
-	<script src="/app/namespace.js"></script>
-	<script src="/app/usecase/createorder.js"></script>
-	<script src="/app/entity/order.js"></script>
-
-	<!-- specs -->
-	<script src="/test/spec/createorder.js"></script>
-</head>
-<body>
-	<div id="qunit"></div>
-</body>
+		<div id="mocha"></div>
+		<script src="/node_modules/mocha/mocha.js"></script>
+		<script src="/node_modules/chai/chai.js"></script>
+		<script>mocha.setup('bdd');</script>
+		<script>expect = chai.expect;</script>
+		<script src="/test/createorder.js"></script>
+		<script>
+			mocha.checkLeaks();
+			var runner = mocha.run();
+			var allTestsPassed = true;
+			runner.on('fail', function() {
+				allTestsPassed = false;
+			});
+			runner.on('end', function(test) {
+				document.title = ( allTestsPassed ) ? "\u2714 "+document.title : "\u2716 "+document.title;
+			});
+		</script>
+	</body>
 </html>
