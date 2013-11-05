@@ -3,19 +3,19 @@
 	<head>
 	<title>User Case Driven JavaScript Mocha Test</title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" href="/node_modules/mocha/mocha.css">
+	<link rel="stylesheet" href="../node_modules/mocha/mocha.css">
 	</head>
 	<body>
-		<script src="/app/namespace.js"></script>
-		<script src="/app/usecase/createorder.js"></script>
-		<script src="/app/entity/order.js"></script>
+		<script src="../app/namespace.js"></script>
+		<script src="../app/usecase/createorder.js"></script>
+		<script src="../app/entity/order.js"></script>
 
 		<div id="mocha"></div>
-		<script src="/node_modules/mocha/mocha.js"></script>
-		<script src="/node_modules/chai/chai.js"></script>
+		<script src="../node_modules/mocha/mocha.js"></script>
+		<script src="../node_modules/chai/chai.js"></script>
 		<script>mocha.setup('bdd');</script>
 		<script>expect = chai.expect;</script>
-		<script src="/test/createorder.js"></script>
+		<script src="../test/createorder.js"></script>
 		<script>
 			mocha.checkLeaks();
 			var runner = mocha.run();

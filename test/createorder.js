@@ -23,7 +23,7 @@ describe('Create Order', function () {
 	});
 
 	it('should return a new order with an orderId', function () {
-		var newOrderRequest = {
+		var OrderRequest = {
 			customerId: 1,
 			shipmentDestination: 'city',
 			paymentInformation: 'credit card',
@@ -31,15 +31,15 @@ describe('Create Order', function () {
 			shipmentMechanism: 'shipment'
 		};
 
-		var newOrder = App.UseCase.createOrder( newOrderRequest );
-		newOrderRequest.orderId = newOrder.orderId;
+		var Order = App.UseCase.createOrder( OrderRequest );
+		OrderRequest.orderId = Order.orderId;
 
-		expect(newOrder.orderId).to.be.a("number");
-		expect(newOrder).to.deep.equal(newOrderRequest);
+		expect(Order.orderId).to.be.a("number");
+		expect(Order).to.deep.equal(OrderRequest);
 	});
 
 	it('should generate a new id for each order', function () {
-		var newOrderRequest = {
+		var OrderRequest = {
 			customerId: 1,
 			shipmentDestination: 'city',
 			paymentInformation: 'credit card',
@@ -47,10 +47,10 @@ describe('Create Order', function () {
 			shipmentMechanism: 'shipment'
 		};
 
-		var newOrder1 = App.UseCase.createOrder( newOrderRequest );
-		var newOrder2 = App.UseCase.createOrder( newOrderRequest );
+		var Order1 = App.UseCase.createOrder( OrderRequest );
+		var Order2 = App.UseCase.createOrder( OrderRequest );
 
-		expect(newOrder1.orderId).to.not.equal(newOrder2.orderId);
+		expect(Order1.orderId).to.not.equal(Order2.orderId);
 	});
 
 });
